@@ -60,7 +60,7 @@ const Projects = ({ onSectionChange }) => {
       description:
         "Interactive 3D portfolio website built with Three.js and React. Features dynamic 3D scenes, particle effects, and smooth animations.",
       technologies: ["Three.js", "React", "WebGL", "GSAP", "Vite"],
-      liveUrl: "http://localhost:3000/",
+      liveUrl: "https://portfolio-anj.netlify.app/",
       githubUrl: "https://github.com/anjali-kumari94",
       features: [
         "3D Scenes",
