@@ -58,10 +58,11 @@ const Hero = ({ onSectionChange }) => {
   const animatedTexts = ["Web Applications", "Mobile Apps", "3D Experiences"];
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
+     <section
+  id="home"
+  className="pt-20 md:pt-24 lg:pt-28 min-h-screen flex items-center justify-center relative overflow-hidden"
+>
+
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900/50 via-dark-800/30 to-dark-900/50" />
 
       <div className="container-custom relative z-10">
