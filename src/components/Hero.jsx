@@ -1,20 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  Download,
-  Mail,
   Github,
   Linkedin,
   Twitter,
 } from "lucide-react";
 
 const Hero = ({ onSectionChange }) => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const containerRef = useRef(null);
 
   useEffect(() => {
     onSectionChange("home");
   }, [onSectionChange]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % animatedTexts.length);
+    }, 2500); // Change every 2.5s
+
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
@@ -41,77 +48,65 @@ const Hero = ({ onSectionChange }) => {
       href: "https://www.linkedin.com/in/anjali-kumari-b91299251/",
       label: "LinkedIn",
     },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    {
+      icon: Twitter,
+      href: "https://twitter.com",
+      label: "Twitter",
+    },
   ];
+
+  const animatedTexts = ["Web Applications", "Mobile Apps", "3D Experiences"];
 
   return (
     <section
-  id="home"
-  className="pt-20 md:pt-24 lg:pt-28 min-h-screen flex items-center justify-center relative overflow-hidden"
->
-
-      {/* Background gradient overlay */}
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900/50 via-dark-800/30 to-dark-900/50" />
 
       <div className="container-custom relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Main heading */}
+          {/* Name & Title */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-              <span className="gradient-text">Hello, I'm</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
+              <span className="gradient-text">Hi, I'm</span>
               <br />
               <span className="text-white">Anjali Kumari</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-4">
-              Full Stack Developer
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2">
+              Software Engineer | Full Stack Developer | Cloud Enthusiast
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Crafting digital experiences with modern technologies and creative
-              solutions. Specializing in React, Node.js, and cloud architecture.
+              Building modern, scalable digital experiences using React, Node.js,
+              MongoDB, and Cloud DevOps.
             </p>
           </motion.div>
 
-          {/* Animated typing effect */}
+          {/* Smooth Typing Animation */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mb-12"
+            className="mb-12 h-8 md:h-10 relative overflow-hidden text-primary-400 text-lg font-semibold"
           >
-            <div className="inline-flex items-center space-x-2 text-lg text-primary-400">
-              <span>I build</span>
-              <div className="relative">
-                <motion.span
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute inset-0"
-                >
-                  Web Applications
-                </motion.span>
-                <motion.span
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                  className="absolute inset-0"
-                >
-                  Mobile Apps
-                </motion.span>
-                <motion.span
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 2 }}
-                  className="absolute inset-0"
-                >
-                  3D Experiences
-                </motion.span>
-              </div>
-            </div>
+            <motion.div
+              key={currentTextIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="absolute inset-0"
+            >
+              {`I build ${animatedTexts[currentTextIndex]}`}
+            </motion.div>
           </motion.div>
 
-          {/* Call to action buttons */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,14 +122,15 @@ const Hero = ({ onSectionChange }) => {
               <span>View My Work</span>
               <ArrowDown className="w-5 h-5" />
             </motion.button>
+            {/* Removed Download Resume Button */}
           </motion.div>
 
-          {/* Social links */}
+          {/* Social Icons */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="flex items-center justify-center space-x-6 mb-8"
+            className="flex items-center justify-center space-x-6 mb-20 relative z-20"
           >
             {socialLinks.map((social, index) => (
               <motion.a
@@ -154,12 +150,12 @@ const Hero = ({ onSectionChange }) => {
             ))}
           </motion.div>
 
-          {/* Scroll indicator */}
+          {/* Scroll Down Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10"
           >
             <motion.button
               onClick={scrollToAbout}
@@ -173,7 +169,7 @@ const Hero = ({ onSectionChange }) => {
         </div>
       </div>
 
-      {/* Floating elements */}
+      {/* Floating Background Dots */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -200,3 +196,4 @@ const Hero = ({ onSectionChange }) => {
 };
 
 export default Hero;
+
