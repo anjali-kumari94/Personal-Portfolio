@@ -108,8 +108,8 @@ const About = ({ onSectionChange }) => {
                 About Me
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                I'm a dedicated full-stack developer with over 5 years of
-                experience in creating innovative digital solutions. My passion
+                I'm a dedicated full-stack developer with over 2+ years of
+                experience in creating innovative digital solutions and also a cloud enthusiast. My passion
                 lies in building scalable applications that solve real-world
                 problems while providing exceptional user experiences.
               </p>
