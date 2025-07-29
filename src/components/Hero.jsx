@@ -79,7 +79,7 @@ const Hero = ({ onSectionChange }) => {
               <span className="text-white">Anjali Kumari</span>
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2">
-              Software Engineer | Full Stack Developer | Cloud Enthusiast
+               Full Stack Developer | Cloud Enthusiast
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
               Building modern, scalable digital experiences using React, Node.js,
