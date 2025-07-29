@@ -46,9 +46,10 @@ const Hero = ({ onSectionChange }) => {
 
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
+  id="home"
+  className="pt-20 md:pt-24 lg:pt-28 min-h-screen flex items-center justify-center relative overflow-hidden"
+>
+
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-dark-900/50 via-dark-800/30 to-dark-900/50" />
 
