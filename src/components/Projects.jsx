@@ -13,7 +13,7 @@ import ecommerceLogo from "../assets/ecommerce logo.png";
 import mernChatLogo from "../assets/mern-chatlogo.png";
 import taskManagerLogo from "../assets/taskmanager logo.png";
 import cloudDashboardLogo from "../assets/cloud dashboard logo.png";
-import gameEngineLogo from "../assets/game enginelogo.png";
+import aicontentLogo from "../assets/aicontentlogo.png";
 import portfolioLogo from "../assets/3d-portfolio.png";
 import blogLogo from "../assets/fullstacl-blog logo.png";
 
@@ -29,7 +29,7 @@ const Projects = ({ onSectionChange }) => {
     { id: "all", label: "All Projects" },
     { id: "web", label: "Web Apps" },
     { id: "mobile", label: "Mobile Apps" },
-    { id: "3d", label: "3D Projects" },
+    { id: "AI", label: "AI Content detector" },
     { id: "ai", label: "AI/ML" },
   ];
 
@@ -139,24 +139,18 @@ const Projects = ({ onSectionChange }) => {
     },
     {
       id: 6,
-      title: "3D Game Engine",
-      category: "3d",
-      image: gameEngineLogo,
+      title: "AI Content Detector",
+      category: "AI",
+      image: aicontentLogo,
       description:
-        "Custom 3D game engine built from scratch with WebGL. Supports physics, lighting, and advanced rendering techniques.",
-      technologies: [
-        "WebGL",
-        "JavaScript",
-        "Three.js",
-        "Cannon.js",
-        "Web Workers",
-      ],
-      liveUrl: "https://example.com",
+        "Developed a responsive web application using Next.js and Bootstrap, bootstrapped with create-next-app",
+      technologies: ["Next.js", "JavaScript", "next-create-app", "Bootstrap"],
+      liveUrl: "https://ai-contentdetector.netlify.app/",
       githubUrl: "https://github.com/anjali-kumari94",
       features: [
-        "Physics Engine",
-        "Advanced Lighting",
-        "Particle Systems",
+        "modular components",
+        "Advanced detecting",
+        "detect ai written",
         "Performance Optimization",
       ],
       icon: Code,
@@ -426,3 +420,4 @@ const Projects = ({ onSectionChange }) => {
 };
 
 export default Projects;
+
