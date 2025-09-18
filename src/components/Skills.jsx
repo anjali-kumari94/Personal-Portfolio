@@ -21,9 +21,7 @@ const Skills = ({ onSectionChange }) => {
       skills: [
         { name: "React", level: 95, color: "#61DAFB" },
         { name: "JavaScript", level: 90, color: "#F7DF1E" },
-        { name: "TypeScript", level: 85, color: "#3178C6" },
         { name: "HTML/CSS", level: 95, color: "#E34F26" },
-        { name: "Vue.js", level: 80, color: "#4FC08D" },
         { name: "Next.js", level: 85, color: "#000000" },
       ],
     },
@@ -52,37 +50,13 @@ const Skills = ({ onSectionChange }) => {
       ],
     },
     {
-      icon: Palette,
-      title: "Design & Tools",
-      skills: [
-        { name: "Figma", level: 85, color: "#F24E1E" },
-        { name: "Adobe XD", level: 80, color: "#FF61F6" },
-        { name: "Photoshop", level: 75, color: "#31A8FF" },
-        { name: "Git", level: 90, color: "#F05032" },
-        { name: "Webpack", level: 80, color: "#8DD6F9" },
-        { name: "Vite", level: 85, color: "#646CFF" },
-      ],
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile Development",
-      skills: [
-        { name: "React Native", level: 80, color: "#61DAFB" },
-        { name: "Flutter", level: 75, color: "#02569B" },
-        { name: "iOS Development", level: 70, color: "#000000" },
-        { name: "Android Development", level: 70, color: "#3DDC84" },
-        { name: "PWA", level: 85, color: "#5A0FC8" },
-        { name: "Mobile UI/UX", level: 80, color: "#FF6B6B" },
-      ],
-    },
-    {
       icon: Globe,
       title: "Other Technologies",
-      skills: [
-        { name: "Three.js", level: 85, color: "#000000" },
-        { name: "WebGL", level: 75, color: "#990000" },
-        { name: "Blockchain", level: 70, color: "#F7931A" },
-        { name: "Machine Learning", level: 65, color: "#FF6B6B" },
+       skills: [
+        { name: "Git", level: 85, color: "#000000" },
+        { name: "Github", level: 90, color: "#990000" },
+        { name: "Generative-AI", level: 90, color: "#F7931A" },
+        { name: "LLM", level: 90, color: "#FF6B6B" },
         { name: "REST APIs", level: 90, color: "#FF6B6B" },
         { name: "Microservices", level: 80, color: "#FF6B6B" },
       ],
@@ -90,9 +64,8 @@ const Skills = ({ onSectionChange }) => {
   ];
 
   const technologies = [
-    "React",
+     "React",
     "Node.js",
-    "TypeScript",
     "Python",
     "AWS",
     "Docker",
@@ -100,16 +73,12 @@ const Skills = ({ onSectionChange }) => {
     "PostgreSQL",
     "GraphQL",
     "Next.js",
-    "Vue.js",
     "Express.js",
     "Kubernetes",
     "Terraform",
     "Git",
-    "Figma",
-    "Three.js",
-    "WebGL",
-    "Flutter",
-    "React Native",
+    "MySQL",
+    "Generative-AI",
   ];
 
   return (
